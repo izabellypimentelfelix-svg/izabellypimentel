@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHOQUEI POP - Famosos, Vídeos e Jogos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">CHOQUEI <span>POP</span></div>
+    <p class="subtitulo">⚡ TUDO O QUE ACONTECE NO MUNDO DOS FAMOSOS EM TEMPO REAL ⚡</p>
+    <nav>
+      <a href="#famosos">Famosos</a>
+      <a href="#videos">Em Alta</a>
+      <a href="#jogos">Game Zone</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <section id="famosos">
+      <h2>🚨 BABADOS DO MOMENTO</h2>
+      <div class="galeria">
+        <div class="card-fofoca">
+          <img src="https://picsum.photos/400/300?random=10" alt="Famoso 1">
+          <div class="card-tag">EXCLUSIVO</div>
+          <h3>Flagra! Cantor famoso é visto em encontro secreto no Rio</h3>
+        </div>
+        <div class="card-fofoca">
+          <img src="https://picsum.photos/400/300?random=20" alt="Famoso 2">
+          <div class="card-tag viral">VIRAL</div>
+          <h3>Influenciadora rebate críticas sobre look polêmico em festa</h3>
+        </div>
+        <div class="card-fofoca">
+          <img src="https://picsum.photos/400/300?random=30" alt="Famoso 3">
+          <div class="card-tag URGENTE">URGENTE</div>
+          <h3>Novo casal no ar? Atores postam fotos no mesmo lugar</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos">
+      <h2>🔥 VÍDEO QUE TÁ BOMBANDO</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="Vídeo em Alta" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section id="jogos">
+      <h2>🎮 GAME ZONE DA FOFOCA</h2>
+      
+      <div class="jogo-box">
+        <h3>Detector de Fofoca: Verdadeiro ou Falso?</h3>
+        <p id="pergunta-quiz">Carregando pergunta...</p>
+        <div class="botoes-quiz">
+          <button class="btn-resposta" onclick="verificarResposta(true)">Verdadeiro 🟢</button>
+          <button class="btn-resposta" onclick="verificarResposta(false)">Falso 🔴</button>
+        </div>
+        <div class="placar">Pontos: <span id="pontos">0</span></div>
+      </div>
+
+      <div class="jogo-box jogo-iframe">
+        <h3>Minigame Arcade</h3>
+        <iframe src="https://play2048.co/"></iframe>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 CHOQUEI POP - Todos os direitos reservados aos fofoqueiros de plantão</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
