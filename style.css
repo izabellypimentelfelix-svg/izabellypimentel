@@ -1,27 +1,31 @@
-.minigame-card {
-  background-color: #222;
-  border: 2px solid #ffe600;
-  border-radius: 8px;
-  padding: 30px;
+.card-arcade {
+  background-color: #1a1a1a;
+  border: 2px dashed #ffe600;
+  border-radius: 12px;
+  padding: 40px 20px;
   text-align: center;
-  color: #fff;
-  margin: 20px auto;
-  max-width: 500px;
+  margin-top: 15px;
 }
 
-.btn-jogar {
+.card-arcade p {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.btn-arcade {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 24px;
   background-color: #ffe600;
   color: #000;
   font-weight: bold;
+  padding: 12px 28px;
+  border-radius: 25px;
   text-decoration: none;
-  border-radius: 20px;
-  transition: transform 0.2s, background-color 0.2s;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
-.btn-jogar:hover {
-  background-color: #ffd700;
+.btn-arcade:hover {
+  background-color: #fff;
   transform: scale(1.05);
 }
