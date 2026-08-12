@@ -1,59 +1,43 @@
-// Lista de perguntas sobre famosos
-const perguntas = [
-  { texto: "O Neymar iniciou sua carreira profissional no Santos?", resposta: true },
-  { texto: "A cantora Anitta nasceu na cidade de São Paulo?", resposta: false }, // Nasceu no Rio de Janeiro
-  { texto: "O DJ Alok é brasileiro?", resposta: true },
-  { texto: "A cantora Beyoncé já fez shows no Brasil?", resposta: true }
-];
+// Aguarda o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', () => {
+  // Seleção dos elementos
+  const btnVerdadeiro = document.querySelector('.btn-verdadeiro');
+  const btnFalso = document.querySelector('.btn-falso');
+  const pontuacaoElemento = document.getElementById('pontuacao');
+  
+  let pontos = 0;
+  let jaRespondeu = false;
 
-let indiceAtual = 0;
-let pontuacao = 0;
+  // Função para processar a resposta
+  function verificarResposta(respostaUsuario) {
+    if (jaRespondeu) return; // Evita que o usuário clique múltiplas vezes
 
-// Elementos do HTML
-const elementoPergunta = document.getElementById('pergunta-quiz');
-const elementoPontos = document.getElementById('pontos');
-const conteinerBotoes = document.querySelector('.botoes-quiz');
+    // Resposta correta do quiz: Verdadeiro (true)
+    const respostaCorreta = true;
 
-function carregarPergunta() {
-  if (indiceAtual < perguntas.length) {
-    elementoPergunta.textContent = perguntas[indiceAtual].texto;
-  } else {
-    // Quando as perguntas terminam
-    elementoPergunta.textContent = "🎉 Fim do quiz! Você é um expert no mundo dos famosos!";
+    if (respostaUsuario === respostaCorreta) {
+      pontos += 10;
+      pontuacaoElemento.textContent = pontos;
+      
+      // Feedback visual positivo
+      btnVerdadeiro.style.backgroundColor = '#28a745';
+      btnVerdadeiro.style.color = '#fff';
+      alert('🎉 Aceeertou! Neymar estreou no profissional do Santos em 2009.');
+    } else {
+      // Feedback visual negativo
+      btnFalso.style.backgroundColor = '#dc3545';
+      btnFalso.style.color = '#fff';
+      alert('❌ Errou! O Neymar iniciou sim a carreira no Santos.');
+    }
+
+    jaRespondeu = true;
     
-    // Mostra um botão para jogar novamente em vez de sumir com tudo
-    conteinerBotoes.innerHTML = `
-      <button class="btn-resposta" onclick="reiniciarJogo()">Jogar Novamente 🔄</button>
-    `;
+    // Desabilita os botões após responder
+    btnVerdadeiro.style.cursor = 'not-allowed';
+    btnFalso.style.cursor = 'not-allowed';
   }
-}
 
-function verificarResposta(respostaUsuario) {
-  if (respostaUsuario === perguntas[indiceAtual].resposta) {
-    pontuacao += 10;
-    alert("ACERTOU! 🚨 Você tá por dentro do mundo Pop!");
-  } else {
-    alert("ERROU! ❌ Mais sorte na próxima!");
-  }
-  
-  elementoPontos.textContent = pontuacao;
-  indiceAtual++;
-  carregarPergunta();
-}
-
-function reiniciarJogo() {
-  indiceAtual = 0;
-  pontuacao = 0;
-  elementoPontos.textContent = pontuacao;
-  
-  // Restaura os botões originais
-  conteinerBotoes.innerHTML = `
-    <button class="btn-resposta" onclick="verificarResposta(true)">Verdadeiro 🟢</button>
-    <button class="btn-resposta" onclick="verificarResposta(false)">Falso 🔴</button>
-  `;
-  
-  carregarPergunta();
-}
-
-// Inicia o jogo assim que a página é carregada
-carregarPergunta();
+  // Eventos de clique
+  btnVerdadeiro.addEventListener('click', () => verificarResposta(true));
+  btnFalso.addEventListener('click', () => verificarResposta(false));
+});
