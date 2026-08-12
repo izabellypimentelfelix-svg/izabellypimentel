@@ -8,30 +8,32 @@
 </head>
 <body>
 
-  <h1>🎮 GAME ZONE DA FOFOCA</h1>
+  <header>
+    <h1>🎮 GAME ZONE DA FOFOCA</h1>
+  </header>
 
   <main class="container">
     
-    <section class="quiz-box">
+    <section class="box-card">
       <h2>Detector de Fofoca: Verdadeiro ou Falso?</h2>
       <p class="pergunta">O Neymar iniciou sua carreira profissional no Santos?</p>
       
       <div class="botoes-resposta">
-        <button class="btn-resposta verdadeiro">Verdadeiro 🟢</button>
-        <button class="btn-resposta falso">Falso 🔴</button>
+        <button class="btn btn-verdadeiro">Verdadeiro 🟢</button>
+        <button class="btn btn-falso">Falso 🔴</button>
       </div>
 
-      <p class="pontos">Pontos: <span>0</span></p>
+      <p class="pontos">Pontos: <span id="pontuacao">0</span></p>
     </section>
 
-    <section class="arcade-box">
+    <section class="box-card">
       <h2>Minigame Arcade</h2>
       
-      <div class="iframe-wrapper">
+      <div class="game-wrapper">
         <iframe 
-          src="https://gabrielecirulli.github.io/2048/" 
-          title="Jogo 2048 Arcade"
-          loading="lazy">
+          src="https://html5.gamedistribution.com/rvvASSmo/a85b9ee77db44e59b34190c1e4835616/index.html" 
+          title="Minigame Arcade"
+          allowfullscreen>
         </iframe>
       </div>
     </section>
